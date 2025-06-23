@@ -1,0 +1,179 @@
+/* 🌈 Theme Variables */
+:root {
+  --bg-color: #fffbea;
+  --text-color: #2e2e2e;
+  --card-bg: #ffecb3;
+  --primary-color: #ff8f00;
+  --hover-color: #ffcc80;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1b2a;
+  --text-color: #d6f0ff;
+  --card-bg: #1b263b;
+  --primary-color: #4dd0e1;
+  --hover-color: #64b5f6;
+}
+
+/* ✨ Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🌍 Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔧 Navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-bg);
+}
+
+.navbar h1 {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto;
+  padding-right: 80px; /* Leaves room for theme toggle */
+}
+
+.navbar ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: var(--hover-color);
+}
+
+/* 🎛️ Theme Toggle Button */
+#themeToggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.15);
+}
+#themeToggle:active {
+  transform: scale(0.95);
+}
+
+/* 📦 Main Content Area */
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 🧾 Content Cards */
+section {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔢 Converter Layout */
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.result {
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+/* 🔻 Footer */
+footer {
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 0;
+  }
+
+  .navbar ul li a {
+    padding: 0.4rem 0.8rem;
+  }
+}
+/* 🌙 Dark Mode */
